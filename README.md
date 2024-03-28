@@ -16,7 +16,8 @@ Not being maintained and uncertain whether they will be updated.
 - Only local `assets://`, `github://`, `gitee://`, `http(s)://user:pwd@xxx` config is supported, and http config without basic auth is not available. 
 - Only video & cloud disk & audio book & comic & txt novel module.
 - Not supporting sniffing.
-- Basic JS interface support.
+- ~~Basic JS interface support.~~
+- Node.js runtime support.
 - No builtin maccms api support.
 - etc.
 
@@ -25,13 +26,13 @@ Not being maintained and uncertain whether they will be updated.
 
 - Windows release only test on `windows11`.
   
-  - Builtin config `data\flutter_assets\asset\js\config_open.json`
+  - Builtin config `data\flutter_assets\asset\js\index.js.md5`
 - MacOS only test on `Big Sur` and `Monterey`.
 
-  - Builtin config `*.app/Contents/Frameworks/App.framework/Resources/flutter_assets/asset/js/config_open.json`
+  - Builtin config `*.app/Contents/Frameworks/App.framework/Resources/flutter_assets/asset/js/index.js.md5`
 - iOS only test on `16.0+`.
 
-  - Builtin config `*.ipa/Payload/Runner.app/Frameworks/App.framework/flutter_assets/asset/js/config_open.json` 
+  - Builtin config `*.ipa/Payload/Runner.app/Frameworks/App.framework/flutter_assets/asset/js/index.js.md5` 
 - Android only test on `8.0+`, maybe not supported to run on emulators, not support TV.
 
-  - Builtin config `*.apk/assets/flutter_assets/asset/js/config_open.json` 
+  - Builtin config `*.apk/assets/flutter_assets/asset/js/index.js.md5` 
