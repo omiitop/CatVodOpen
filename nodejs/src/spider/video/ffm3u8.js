@@ -142,6 +142,32 @@ async function proxy(inReq, outResp) {
 
 async function play(inReq, _outResp) {
     const id = inReq.body.id;
+    if (id.indexOf('.m3u8') < 0) {
+        const sniffer = await inReq.server.messageToDart({
+            action: 'sniff',
+            opt: {
+                url: id,
+                timeout: 10000,
+                rule: 'http((?!http).){12,}?\\.m3u8(?!\\?)',
+            },
+        });
+        if (sniffer && sniffer.url) {
+            const hds = {};
+            if (sniffer.headers) {
+                if (sniffer.headers['user-agent']) {
+                    hds['User-Agent'] = sniffer.headers['user-agent'];
+                }
+                if (sniffer.headers['referer']) {
+                    hds['Referer'] = sniffer.headers['referer'];
+                }
+            }
+            return {
+                parse: 0,
+                url: sniffer.url,
+                header: hds,
+            };
+        }
+    }
     return {
         parse: 0,
         url: inReq.server.address().dynamic + inReq.server.prefix + '/proxy/hls/' + encodeURIComponent(id) + '/.m3u8',

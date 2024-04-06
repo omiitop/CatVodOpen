@@ -15,7 +15,7 @@ Not being maintained and uncertain whether they will be updated.
 
 - Only local `assets://`, `github://`, `gitee://`, `http(s)://user:pwd@xxx` config is supported, and http config without basic auth is not available. 
 - Only video & cloud disk & audio book & comic & txt novel module.
-- Not supporting sniffing.
+- ~~Not supporting sniffing.~~
 - ~~Basic JS interface support.~~
 - Node.js runtime support.
 - No builtin maccms api support.
